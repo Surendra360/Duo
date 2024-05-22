@@ -1,18 +1,14 @@
 function cursor() {
     var cursor = document.querySelector(".cursor")
-var main = document.querySelector(".main")
-var vdo = document.querySelector("video")
+    var main = document.querySelector(".main")
+    var vdo = document.querySelector("video")
+    var img = document.querySelector(".image")
 
-main.addEventListener("mousemove", (dets)=>{
-    cursor.style.left = dets.x+"px"
-    cursor.style.top = dets.y+"px"
+document.addEventListener("mousemove", (dets)=>{
+    cursor.style.left = dets.x+10 +"px"
+    cursor.style.top = dets.y +"px"
 })
 
-vdo.addEventListener("mouseenter", ()=>{
-
-    cursor.style.width = "100px"
-    cursor.style.height = "30px"
-})
 vdo.addEventListener("mouseenter", ()=>{
     cursor.style.width = "0"
     cursor.style.height = "0"
@@ -52,7 +48,6 @@ ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 ScrollTrigger.refresh();
 
 }
-
 init()
 
 
@@ -114,4 +109,41 @@ var tl3 = gsap.timeline({
 
 tl3.to(".main",{
     backgroundColor: "#0F0D0D"
+})
+
+var cursor = document.querySelector(".cursor")
+var boxes = document.querySelectorAll(".page5-box");
+boxes.forEach((elem)=>{
+    elem.addEventListener("mouseenter",()=>{
+        var att = elem.getAttribute("data-image")
+        cursor.style.width = "300px"
+        cursor.style.height = "250px"
+        cursor.style.borderRadius = "0"
+        cursor.style.backgroundImage = `url(${att})`
+        cursor.style.mixBlendMode= "normal";
+    })
+    elem.addEventListener("mouseleave",()=>{
+        elem.style.backgroundColor= "transparent"
+        cursor.style.width = "20px"
+        cursor.style.height = "20px"
+        cursor.style.borderRadius = "50%"
+        cursor.style.backgroundImage = `none`
+        cursor.style.mixBlendMode= "difference";
+    })
+})
+
+var h4 = document.querySelectorAll(".nav h4")
+var purple = document.querySelector(".purple")
+
+h4.forEach((elem)=>{
+    elem.addEventListener("mouseenter",()=>{
+        purple.style.display = "block"
+        purple.style.opacity = "1"
+
+    })
+    elem.addEventListener("mouseleave",()=>{
+        purple.style.display = "none"
+        purple.style.opacity = "0"
+
+    })
 })

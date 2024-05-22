@@ -11,6 +11,16 @@ body{
     height: 100%;   
     width: 100%;
 }
+.purple{
+    width: 100vw;
+    height: 100vh;
+    background-color:#EDBFFF;
+    z-index: 100;
+    position: fixed;
+    opacity: 0;
+    display: none;
+    transition: opacity ease 1s;
+}
 
 .cursor{
     width: 20px;
@@ -19,13 +29,17 @@ body{
     position: fixed;
     background-color: #EDBFFF;
     z-index: 8;
+    transition: background-image ease 0.5s;
     mix-blend-mode: difference;
-    transition: linear 0.2s all;
+    background-position: center;
+    background-size: cover;
+    
 }
 
 
 .main{
     background-color: #0F0D0D;
+    cursor: none;
 }
 
 .page1{
@@ -33,6 +47,7 @@ body{
     width: 100%;  
     position: relative;
     z-index: 9;
+    padding-top: 12vw;
 }
 
 .nav{
@@ -42,7 +57,11 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 30px;
+    padding: 2vw 30px;
+    /* background-color: red; */
+    position: fixed;
+    mix-blend-mode: difference;
+    z-index: 102;
 }
 
 .nav img{
@@ -77,7 +96,6 @@ body{
     font-size: 7vw;
     font-family: pp mori;
     font-weight: 400;
-    margin-top: 12vw;
     margin-left: 7vw;
 }
 .page1 h2{
@@ -167,6 +185,7 @@ body{
     border-bottom: 2px solid #4c4c4c;
     position: relative;
     z-index: 9;
+    overflow: hidden;
 }
 
 .page3 h1{
@@ -238,6 +257,7 @@ body{
     position: relative;
     z-index: 9;
     padding: 8vw 5vw;
+    border-bottom: 2px solid #4c4c4c;
 }
 
 .elem{
@@ -295,5 +315,34 @@ body{
     min-height: 100vh;
     position: relative;
     z-index: 9;
-    background: yellowgreen;
+    padding: 5vw;
+    /* background: yellowgreen; */
+}
+.page5 h2{
+    font-size: 4vw;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 3vw;
+}
+
+.page5-box{
+    /* background: cadetblue; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5.5vw;
+    padding: 0 2vw;
+    border-top: 2px solid #dadada;
+}
+
+.page5-box:nth-last-child(1){
+    border-bottom: 2px solid #dadada;
+}
+
+
+
+.footer{
+    height: 90vh;
+    width: 100%;
+    background-color: red;
 }
