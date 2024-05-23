@@ -6,7 +6,7 @@ function cursor() {
 
 document.addEventListener("mousemove", (dets)=>{
     cursor.style.left = dets.x+10 +"px"
-    cursor.style.top = dets.y +"px"
+    cursor.style.top = dets.y-5 +"px"
 })
 
 vdo.addEventListener("mouseenter", ()=>{
@@ -55,7 +55,7 @@ var tl =gsap.timeline({
     scrollTrigger:{
         trigger:".page1 h1",
         scroller:".main",
-        markers:true,
+        // markers:true,
         start:"top 27%",
         end:"top 0",
         scrub:3
@@ -80,10 +80,10 @@ var tl2 = gsap.timeline({
     scrollTrigger:{
         trigger:".page2",
         scroller:".main",
-        markers:true,
-        start:"top -10%",
+        // markers:true,
+        start:"top -5%",
         end:"top 0%",
-        scrub:3
+        scrub:2
     }
 })
 
@@ -92,17 +92,16 @@ tl2.to(".main",{
 })
 
 
-
-
 //page3 timeline function
 
 var tl3 = gsap.timeline({
+    x:-100,
     scrollTrigger:{
         trigger:".page4",
         scroller:".main",
-        markers:true,
-        start:"top -5%",
-        end:"top -10%",
+        // markers:true,
+        start:"top 15%",
+        end:"top 10%",
         scrub:3
     }
 })
@@ -110,6 +109,44 @@ var tl3 = gsap.timeline({
 tl3.to(".main",{
     backgroundColor: "#0F0D0D"
 })
+
+
+
+var tl4 = gsap.timeline({
+    duration:"10s",
+    scrollTrigger:{
+        trigger:".page3-part1",
+        scroller:".main",
+        markers:true,
+        start: "top 0%",
+        end: "top -100%",
+        scrub:3
+    }
+})
+
+tl4.from(".page3-part1 img",{
+    x: 100,
+    y: -100   
+},"p4")
+tl4.from(".page3-part2 img",{
+    x: -100, 
+    y: -100   
+},"p4")
+tl4.from(".page3-part1 video",{
+    x: -100, 
+    y: 100   
+},"p4")
+tl4.from(".page3-part2 video",{
+    x: 100, 
+    y: -200   
+},"p4")
+tl4.from(".page3-part3-btn",{
+    duration:2,
+    x:200,
+    y:200
+})
+
+
 
 var cursor = document.querySelector(".cursor")
 var boxes = document.querySelectorAll(".page5-box");
@@ -145,5 +182,20 @@ h4.forEach((elem)=>{
         purple.style.display = "none"
         purple.style.opacity = "0"
 
+    })
+})
+
+
+var img = document.querySelectorAll(".img")
+var crsr = document.querySelector(".cursor")
+
+img.forEach((elem)=>{
+    elem.addEventListener("mouseenter",()=>{
+        crsr.style.width = "40px"
+        crsr.style.height = "40px"
+    })
+    elem.addEventListener("mouseleave",()=>{
+        crsr.style.width = "20px"
+        crsr.style.height = "20px"
     })
 })

@@ -26,7 +26,7 @@ body{
     width: 20px;
     height: 20px;
     border-radius: 50px;
-    position: fixed;
+    position: absolute;
     background-color: #EDBFFF;
     z-index: 8;
     transition: background-image ease 0.5s;
@@ -342,7 +342,33 @@ body{
 
 
 .footer{
-    height: 90vh;
+    min-height: max-content;
     width: 100%;
-    background-color: red;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: start;
+    padding: 3vw;
+}
+
+.footer-box{
+    width: 20vw;
+    height: 40vh;
+    margin: 3vw;
+}
+
+.footer-box h3{
+    font-size: 1.4vw;
+    margin-bottom: 2vw;
+}
+
+.footer-box ul li{
+    list-style: none;
+    margin-bottom: 1vw;
+}
+
+.footer-box img{
+    height: 20vh;
+    /* margin: 5vw; */
 }
