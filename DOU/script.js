@@ -117,7 +117,7 @@ var tl4 = gsap.timeline({
     scrollTrigger:{
         trigger:".page3-part1",
         scroller:".main",
-        markers:true,
+        // markers:true,
         start: "top 0%",
         end: "top -100%",
         scrub:3
@@ -144,6 +144,18 @@ tl4.from(".page3-part3-btn",{
     duration:2,
     x:200,
     y:200
+})
+
+gsap.to(".footer",{
+    y: -400,
+    scrollTrigger:{
+        trigger:".footer",
+        scroller:".main",
+        // markers:true,
+        start: "top 30%",
+        end: "top 0%",
+        scrub:3
+    }
 })
 
 
